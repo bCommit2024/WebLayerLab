@@ -22,5 +22,7 @@ public class TestingWebDouble {
     @Test
     void shouldReturnDouble(){
         org.assertj.core.api.Assertions.assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/doubleNum?number=500",Integer.class)).isEqualTo(1000);
+        org.assertj.core.api.Assertions.assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/doubleNum?number=1",Integer.class)).isEqualTo(2);
+        org.assertj.core.api.Assertions.assertThat(this.restTemplate.getForObject("http://localhost:"+port+"/doubleNum?number=2",Integer.class)).isEqualTo(4);
     }
 }
